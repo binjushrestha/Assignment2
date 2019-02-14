@@ -14,12 +14,26 @@ public class BeerSong {
     /**
      * @param args the command line arguments
      */
-    
-    static String Ninety_Nine_Bottles_of_Beer(int i) { return i > 1 ? " bottles of beer" : " bottle of beer"; }
-    
-    public static void main(String [] arg) {
-    String [] Ninety_Nine_Bottles_of_Beer = { " on the wall, ", "\nTake one down, pass it round, " };
-    for(int i=99;i>0;i--) System.out.println("" + i + Ninety_Nine_Bottles_of_Beer(i) + Ninety_Nine_Bottles_of_Beer[0] + i + Ninety_Nine_Bottles_of_Beer(i) + Ninety_Nine_Bottles_of_Beer[1] + ((i>1)?i+Ninety_Nine_Bottles_of_Beer(i):"no more bottles of beer"));
-  }
+    public static void main (String[] args){
+    int beerNum = 99;
+    String word = "bottles";
+    while(beerNum > 0){
+        System.out.println(beerNum + " " + word + " of beer on the wall");
+        System.out.println(beerNum + " " + word + " of beer.");
+        System.out.println("Take one down.");
+        System.out.println("Pass it around.");
+
+        beerNum = beerNum - 1;
+        if (beerNum == 1){
+            word = "bottle";
+        }
+        if (beerNum > 0){
+            System.out.println(beerNum + " " + word + " of beer on the wall");
+            System.out.println("***************************");
+        }else {
+            System.out.println("No more bottles of beer on the wall");
+        }
+    }
+}
 } 
 
